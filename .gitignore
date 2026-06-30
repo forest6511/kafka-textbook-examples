@@ -1,0 +1,14 @@
+# Go
+/bin/
+*.exe
+*.test
+*.out
+
+# Docker / Kafka data
+kraft-combined-logs/
+*.log
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
