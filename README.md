@@ -33,14 +33,13 @@ docker compose exec broker /opt/kafka/bin/kafka-topics.sh \
 - ch02-setup — Docker で KRaft クラスタを起動し、franz-go から最小疎通する
 - ch04-producer — franz-go で Producer を書く
 - ch05-consumer — franz-go で Consumer を書く
-- ch06-event-driven — イベント駆動の小さなシステム（注文→在庫）
-- ch07-delivery — 配信保証とトランザクション
+- ch07-transactions — 配信保証とトランザクション（consume-transform-produce の exactly-once）
 - ch08-schema — Schema Registry 連携
 - ch09-operations — 運用（複数ブローカー構成・監視）
 - ch10-client-selection — franz-go / confluent-kafka-go / segmentio の書き比べ
 - ch11-systematize — テスト（kfake）・CI・再現性
 
-> 第1章（Kafka をいつ使うかの判断章）と第3章（中核概念）は実行するコードが中心ではないため、ディレクトリはありません（必要なコマンドは ch02-setup に含みます）。
+> 第1章（Kafka をいつ使うかの判断章）・第3章（中核概念）・第6章（イベント駆動の設計章）は実行するコードが中心ではないため、ディレクトリはありません（第3章で使うコマンドは ch03-concepts に、第6章の Producer/Consumer は ch04-producer / ch05-consumer を役割で読み替えます）。
 
 ## バージョン
 
