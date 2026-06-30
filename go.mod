@@ -2,7 +2,10 @@ module github.com/forest6511/kafka-textbook-examples
 
 go 1.26
 
-require github.com/twmb/franz-go v1.21.4
+require (
+	github.com/twmb/franz-go v1.21.4
+	github.com/twmb/franz-go/pkg/sr v1.7.0
+)
 
 require (
 	github.com/klauspost/compress v1.18.6 // indirect
