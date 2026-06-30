@@ -12,3 +12,7 @@ kraft-combined-logs/
 .DS_Store
 .idea/
 .vscode/
+
+# stray client build outputs
+/ch10-clients/confluent/confluent
+/confluent
