@@ -7,6 +7,7 @@ package main
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"log"
 	"time"
@@ -32,19 +33,30 @@ func main() {
 	ctx := context.Background()
 	processed := 0
 	// デモのため、一定時間メッセージが来なければ終了する。
+	// PollFetches は新しいレコードが来るまでブロックするので、
+	// 各ポーリングに 3 秒の締め切りを付け、締め切りに達したら終了する。
 	idle := 0
 	for {
-		fetches := sess.PollFetches(ctx)
+		pollCtx, cancel := context.WithTimeout(ctx, 3*time.Second)
+		fetches := sess.PollFetches(pollCtx)
+		cancel()
 		if errs := fetches.Errors(); len(errs) > 0 {
+			// 締め切り超過は「もうメッセージがない」合図として扱う。
+			if errors.Is(fetches.Err0(), context.DeadlineExceeded) {
+				idle++
+				if idle >= 2 {
+					break
+				}
+				continue
+			}
 			log.Fatalf("取得エラー: %v", errs)
 		}
 		n := fetches.NumRecords()
 		if n == 0 {
 			idle++
-			if idle >= 3 {
+			if idle >= 2 {
 				break
 			}
-			time.Sleep(500 * time.Millisecond)
 			continue
 		}
 		idle = 0
