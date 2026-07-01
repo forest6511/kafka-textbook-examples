@@ -44,5 +44,5 @@ docker compose down -v      # 停止 + データ削除
 
 ## 動作確認環境
 
-- Apache Kafka 4.x（`apache/kafka` 公式イメージ・KRaft モード）
-- franz-go v1.21+ / Go 1.26
+- Apache Kafka 4.3.1（`apache/kafka` 公式イメージ・KRaft モード）
+- franz-go v1.21.4 / Go 1.26

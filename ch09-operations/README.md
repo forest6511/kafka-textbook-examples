@@ -14,7 +14,11 @@
 
 ## 実行
 
+> **この章は `ch09-operations/` に `cd` してから実行します。** 章専用の `docker-compose.yml`（3 ブローカー KRaft クラスタ）を使うため、ルートで Kafka を起動している場合は先に `docker compose down -v` で止めておいてください（ポート衝突を防ぐため）。
+
 ```bash
+cd ch09-operations       # この章のディレクトリへ移動
+
 docker compose up -d
 sleep 15   # 3 台のクラスタが揃うまで待つ
 

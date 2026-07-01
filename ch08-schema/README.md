@@ -15,7 +15,11 @@ Confluent Schema Registry を franz-go の `sr` パッケージで操作し、
 
 ## 実行
 
+> **この章は `ch08-schema/` に `cd` してから実行します。** 章専用の `docker-compose.yml`（Kafka + Schema Registry）を使うため、ルートで Kafka を起動している場合は先に `docker compose down -v` で止めておいてください（ポート衝突を防ぐため）。
+
 ```bash
+cd ch08-schema           # この章のディレクトリへ移動
+
 docker compose up -d
 
 # Schema Registry が立ち上がるまで待つ(8081 が 200 を返すまで)

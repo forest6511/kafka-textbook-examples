@@ -28,4 +28,4 @@ docker compose down -v
 
 ## 動作確認環境
 
-- Apache Kafka 4.x（apache/kafka 公式イメージ・KRaft モード）
+- Apache Kafka 4.3.1（apache/kafka 公式イメージ・KRaft モード）/ Go 1.26
