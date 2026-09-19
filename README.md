@@ -75,7 +75,7 @@ docker compose exec broker /opt/kafka/bin/kafka-topics.sh \
 
 ## 書籍について
 
-本書は Amazon Kindle / ペーパーバックで販売予定です（出版後、ここに商品ページのリンクを追加します）。
+Kindle 版: [Apache Kafka の教科書](https://www.amazon.co.jp/dp/B0H2JW3CZG)
 
 ## ライセンス
 
